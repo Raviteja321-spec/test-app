@@ -1,0 +1,27 @@
+{
+  "name": "@early/ui-common-configs",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "",
+    "check:lint": "",
+    "check:ts": "",
+    "check:prettier": "",
+    "fix:prettier": "",
+    "fix:lint": "",
+    "fix": ""
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "@typescript-eslint/eslint-plugin": "6.12",
+    "eslint": "^8.0.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "prettier": "^2.0.0",
+    "typescript": "^5.2.2"
+  },
+  "description": "This package contains common configurations for the Early AI project.",
+  "author": "",
+  "license": "ISC"
+}

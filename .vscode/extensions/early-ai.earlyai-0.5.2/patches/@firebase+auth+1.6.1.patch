@@ -1,0 +1,48 @@
+diff --git a/node_modules/@firebase/auth/dist/auth-public.d.ts b/node_modules/@firebase/auth/dist/auth-public.d.ts
+index a3618f6..279674d 100644
+--- a/node_modules/@firebase/auth/dist/auth-public.d.ts
++++ b/node_modules/@firebase/auth/dist/auth-public.d.ts
+@@ -1626,6 +1626,10 @@ export declare function initializeAuth(app: FirebaseApp, deps?: Dependencies): A
+  */
+ export declare function initializeRecaptchaConfig(auth: Auth): Promise<void>;
+ 
++export declare class UserImpl extends User {
++    static _fromJSON(auth:Auth, object: Record<string, unknown>): User;
++}
++
+ /**
+  * An implementation of {@link Persistence} of type 'NONE'.
+  *
+diff --git a/node_modules/@firebase/auth/dist/browser-cjs/index.js b/node_modules/@firebase/auth/dist/browser-cjs/index.js
+index cdd1990..e3d336b 100644
+--- a/node_modules/@firebase/auth/dist/browser-cjs/index.js
++++ b/node_modules/@firebase/auth/dist/browser-cjs/index.js
+@@ -96,3 +96,6 @@ exports.validatePassword = index.validatePassword;
+ exports.verifyBeforeUpdateEmail = index.verifyBeforeUpdateEmail;
+ exports.verifyPasswordResetCode = index.verifyPasswordResetCode;
+ //# sourceMappingURL=index.js.map
++
++// hack to export UserImpl._fromJSON
++exports.UserImpl = totp.UserImpl
+diff --git a/node_modules/@firebase/auth/dist/node-esm/index.js b/node_modules/@firebase/auth/dist/node-esm/index.js
+index 01a4dc9..c31b934 100644
+--- a/node_modules/@firebase/auth/dist/node-esm/index.js
++++ b/node_modules/@firebase/auth/dist/node-esm/index.js
+@@ -6,3 +6,6 @@ import '@firebase/component';
+ import 'undici';
+ import '@firebase/logger';
+ //# sourceMappingURL=index.js.map
++
++// hack to export UserImpl._fromJSON
++export {aQ as UserImpl} from './totp-07e290a9.js';
+diff --git a/node_modules/@firebase/auth/dist/node/index.js b/node_modules/@firebase/auth/dist/node/index.js
+index 5469378..a57cccd 100644
+--- a/node_modules/@firebase/auth/dist/node/index.js
++++ b/node_modules/@firebase/auth/dist/node/index.js
+@@ -97,3 +97,6 @@ exports.validatePassword = totp.validatePassword;
+ exports.verifyBeforeUpdateEmail = totp.verifyBeforeUpdateEmail;
+ exports.verifyPasswordResetCode = totp.verifyPasswordResetCode;
+ //# sourceMappingURL=index.js.map
++
++// hack to export UserImpl._fromJSON
++exports.UserImpl = totp.UserImpl
